@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       vim \
       git \
       sudo\
+      tzdata \
  && ln -s /usr/bin/python3.11 /usr/local/bin/python3 \
  && ln -s /usr/bin/pip3.11 /usr/local/bin/pip3 || true \
  && curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11 \
