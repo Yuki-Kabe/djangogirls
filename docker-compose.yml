@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .
+      args:
+        UID: ${UID:-1001}
+        GID: ${GID:-1001}
+    container_name: django-girls-web
+    volumes:
+      - ./:/workspace
+    ports:
+      - 8000:8000 # Django用ポート
+      - 5678:5678 # デバッガ用ポート
+    tty: true           # ターミナルを確保（対話型シェル利用のため）
+    stdin_open: true    # 標準入力を開いた状態に
+    command: /bin/bash  # コンテナ起動時にbashシェルを起動
