@@ -61,6 +61,25 @@ blogアプリのデータモデルを設計する。blog/models.pyに記述。<b
 
 マイグレーション実行。<br>
 ```
-python3 manage.py makemigrations <アプリ名> # マイグレーションファイルを作成
+python3 manage.py makemigrations <アプリ名> # マイグレーションファイルを作成。
+# アプリ名/migrations配下にマイグレーションファイルが作成される
+
+# アプリ名/migrations配下にマイグレーションファイルがあることを確認してマイグレ実行
 python3 manage.py migrate <アプリ名> # マイグレーション実行
 ```
+
+## [ログインページを作ろう (Django admin)](https://tutorial.djangogirls.org/ja/django_admin/)
+前の章で作成したポストのデータをCRUDするのにadmin管理画面を作成する。
+
+スーパーユーザ(サイトの全ての権限を持つユーザ)を作成<br>
+```
+python3 manage.py createsuperuser
+```
+- ユーザ名 : dev
+- メールアドレス : dev@example.com
+- パスワード : devPassword
+で作成
+
+serverを立ち上げ`python3 manage.py runserver 0.0.0.0:8080`、http://localhost:8080/admin にアクセス。設定したユーザ名とパスワードでログイン
+
+管理画面上から記事を3つ作成した。
