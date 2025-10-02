@@ -26,8 +26,8 @@ ex.) docker exec -uroot -it django-girls-web bash
 ```
 
 # DjangoGirls
-https://tutorial.djangogirls.org/ja
-## Djangoのinstall
+https://tutorial.djangogirls.org/ja を進めていく。各ページごとにコミットする。環境構築が完了していればDjangoのインストールから開始できるはず。
+## [Djangoのインストール](https://tutorial.djangogirls.org/ja/django_installation/)
 1. `dockerfile`などと同じディレクトリの位置に`requirements.txt`を作成して資料通りにinstall
 2. install時に以下のwarningが出たらpathを通す(`~/.bashrc`などに`export PATH=$HOME/.local/bin:$PATH`を追記)
 ```
@@ -40,7 +40,7 @@ Successfully installed Django-5.1.13 asgiref-3.9.2 sqlparse-0.5.3
 ```
 3. bashを再起動して`django-admin`コマンドが利用できるか確認
 
-## プロジェクトを作成しよう！
+## [プロジェクトを作成しよう！](https://tutorial.djangogirls.org/ja/django_start_project/)
 `python3 manage.py runserver 0.0.0.0:8080`を実行
 ```
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -52,3 +52,15 @@ tzdataというパッケージのinstallが必要らしい。`apt-get install tz
 
 再度`python3 manage.py runserver 0.0.0.0:8080`を実行
 http://localhost:8080/ でアクセスした。成功
+
+## [Djangoモデル](https://tutorial.djangogirls.org/ja/django_models/)
+新しく`blog`というアプリケーションを作成する。アプリケーションの概念がよくわからない。mysiteとblogなぜ2つ作ったのか。<br>
+`mysite/settings.py`に新しく作成した`blogアプリ`を追加する。
+
+blogアプリのデータモデルを設計する。blog/models.pyに記述。<br>
+
+マイグレーション実行。<br>
+```
+python3 manage.py makemigrations <アプリ名> # マイグレーションファイルを作成
+python3 manage.py migrate <アプリ名> # マイグレーション実行
+```
