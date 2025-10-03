@@ -54,7 +54,7 @@ tzdataというパッケージのinstallが必要らしい。`apt-get install tz
 http://localhost:8080/ でアクセスした。成功
 
 ## [Djangoモデル](https://tutorial.djangogirls.org/ja/django_models/)
-新しく`blog`というアプリケーションを作成する。アプリケーションの概念がよくわからない。mysiteとblogなぜ2つ作ったのか。<br>
+新しく`blog`というアプリケーションを作成する。プロジェクトとアプリケーションの違いがよくわからない。mysiteとblogの違いは何なのだろうか。<br>
 `mysite/settings.py`に新しく作成した`blogアプリ`を追加する。
 
 blogアプリのデータモデルを設計する。blog/models.pyに記述。<br>
@@ -98,3 +98,7 @@ Password: 設定した
 Superuser created successfully.
 ```
 https://ユーザ名.pythonanywhere.com/ でアクセス。https://ユーザ名.pythonanywhere.com/
+
+## [Django URL](https://tutorial.djangogirls.org/ja/django_urls/)
+アプリケーションのディレクトリに`urls.pyファイル`を新規作成し、プロジェクトの`urls.pyファイル`でimportした。<br>
+この章はviewの設定をしていないのでserverを動かそうとするとエラーになるが問題なし。
