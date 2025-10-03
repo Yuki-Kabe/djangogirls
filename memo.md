@@ -102,3 +102,6 @@ https://ユーザ名.pythonanywhere.com/ でアクセス。https://ユーザ名.
 ## [Django URL](https://tutorial.djangogirls.org/ja/django_urls/)
 アプリケーションのディレクトリに`urls.pyファイル`を新規作成し、プロジェクトの`urls.pyファイル`でimportした。<br>
 この章はviewの設定をしていないのでserverを動かそうとするとエラーになるが問題なし。
+
+## [Djangoビュー](https://tutorial.djangogirls.org/ja/django_views/)
+アプリケーションのviews.pyを編集。テンプレートが存在しないのでこの章でも動かないが問題なし。
