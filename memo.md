@@ -83,3 +83,18 @@ python3 manage.py createsuperuser
 serverを立ち上げ`python3 manage.py runserver 0.0.0.0:8080`、http://localhost:8080/admin にアクセス。設定したユーザ名とパスワードでログイン
 
 管理画面上から記事を3つ作成した。
+
+## [デプロイ](https://tutorial.djangogirls.org/ja/deploy/)
+pythonanywhereにデプロイする。(以前はherokuだったらしいが有料化したため無料のpythonanywhereになった)
+
+pythonanywhereでアカウント作成(bekar28)、APIトークンを発行、Dashboardの画面からbashを起動<br>
+```
+pip install --user pythonanywhere
+pa_autoconfigure_django.py --python=3.13 https://github.com/Yuki-Kabe/djangogirls.git --nuke # 3.6だとエラーになったのでpythonanywhereのデフォルトの3.13にした
+python3 manage.py createsuperuser
+ユーザー名 (leave blank to use 'bekar28'):
+メールアドレス: gmailのやつ
+Password: 設定した
+Superuser created successfully.
+```
+https://ユーザ名.pythonanywhere.com/ でアクセス。https://ユーザ名.pythonanywhere.com/
