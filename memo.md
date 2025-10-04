@@ -136,3 +136,10 @@ post.publish()
 from djnago.utils impot timezone
 Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 ```
+
+## [テンプレート内の動的データ](https://tutorial.djangogirls.org/ja/dynamic_data_in_templates/)
+DjangoではViewがController的な役割をする。
+アプリケーションの`views.py`を編集してmodelからテンプレートへデータを渡した。
+
+## [Djangoテンプレート](https://tutorial.djangogirls.org/ja/django_templates/)
+Viewからもらったデータを用いて動的にページが表示できるようにした。
