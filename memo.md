@@ -108,3 +108,31 @@ https://ユーザ名.pythonanywhere.com/ でアクセス。https://ユーザ名.
 
 ## [HTML入門](https://tutorial.djangogirls.org/ja/html/)
 アプリケーションのviews.pyが参照するテンプレートファイルを作成した。このとき、アプリケーションのディレクトリ配下に`templates/アプリ名`でディレクトリを作って、その配下にテンプレートファイルを配置した。こうすると何かと都合が良いらしい。
+
+## [Django ORM (クエリセット)](https://tutorial.djangogirls.org/ja/django_orm/)
+DjangoのインタラクティブコンソールでORMを利用してみる
+```
+python3 manage.py shell
+```
+コンソールからはアプリケーションのmodels.pyをimportして`モデル名.objects.メソッド`でcrudできる
+ex)
+```
+from blog.models import Post # Postオブジェクトをimport
+# 全てget
+Post.objects.all()
+# フィルターしてget
+Post.objects.filter(title__contains='test') # プロパティ__メソッドというように"__"で繋ぐ
+
+# Create
+from django.contrib.auth.models import User # Userオブジェクトをimport
+me = User.objects.get(username='dev')
+Post.objects.create(author=me, title='Sample title', text='Create Test')
+
+# Postオブジェクトで定義したメソッドを利用(published_dateがnullなのでpublish()で現在時刻に設定)
+post = Post.objects.get(title='Sample title')
+post.publish()
+
+# メソッドチェーン
+from djnago.utils impot timezone
+Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+```
