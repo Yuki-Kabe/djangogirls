@@ -105,3 +105,6 @@ https://ユーザ名.pythonanywhere.com/ でアクセス。https://ユーザ名.
 
 ## [Djangoビュー](https://tutorial.djangogirls.org/ja/django_views/)
 アプリケーションのviews.pyを編集。テンプレートが存在しないのでこの章でも動かないが問題なし。
+
+## [HTML入門](https://tutorial.djangogirls.org/ja/html/)
+アプリケーションのviews.pyが参照するテンプレートファイルを作成した。このとき、アプリケーションのディレクトリ配下に`templates/アプリ名`でディレクトリを作って、その配下にテンプレートファイルを配置した。こうすると何かと都合が良いらしい。
