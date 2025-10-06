@@ -12,8 +12,8 @@ PythonのデータをHTMLテンプレートに埋め込んでブラウザに返�
 render(request, template_name, context=None, content_type=None, status=None, using=None)
 ```
 - request : HttpRequestオブジェクト。これはimportしなくても勝手にDjangoがいい感じにしてくれてるっぽい
-- template_name : データを渡す先のテンプレートファイル(遷移先のページのファイル)
-- context : テンプレートに渡すデータ(辞書形式)
+- template_name : 利用したいテンプレートファイル(ページのファイルパス)
+- context : テンプレートで使用するデータ(辞書形式。キーはテンプレートでデータアクセスする際に利用する)
 
 ## redirect()メソッド
 処理が終わったあとに別のページなどに自動遷移したい際に利用する

@@ -138,7 +138,8 @@ Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date
 ```
 
 ## [テンプレート内の動的データ](https://tutorial.djangogirls.org/ja/dynamic_data_in_templates/)
-DjangoではViewがController的な役割をする。
+DjangoではViewがController的な役割をする。<br>
+Viewのrender()関数では読み込むテンプレートファイルと描画に必要なデータを指定して、それを元にページをレンダリングする。
 アプリケーションの`views.py`を編集してmodelからテンプレートへデータを渡した。
 
 ## [Djangoテンプレート](https://tutorial.djangogirls.org/ja/django_templates/)
@@ -172,15 +173,32 @@ DjangoフォームはFormクラスが保存対象とするModelクラスの必�
 
 新規作成<br>
 アプリケーションの`forms.pyファイル`を新規作成<br>
-- base.htmlにフォーム画面に遷移するためのリンクを作成
-- urls.pyにフォーム画面に遷移/フォーム送信を実行するためのURLパターンを追加
-- views.pyにフォーム画面に遷移/フォーム送信するためのメソッドを追加
-- post_edit.htmlを新規作成
+- フォームを送信するためのページ`post_edit.html`テンプレートを新規作成
+- `views.py`にフォーム画面を描画/フォームの内容を保存するためのメソッド(`post_new`)を作成
+- `urls.py`に作成したviewのメソッドのURLパターンを追加
+- `base.html`に作成したviewのメソッドを呼び出すリンクを追加(新規作成フォーム画面に遷移する)
 
 既存の更新<br>
-- post_detail.htmlにフォーム画面に遷移するためのリンクを作成
-- urls.pyにフォーム画面に遷移/フォーム送信を実行するためのURLパターンを追加
-- views.pyにフォーム画面に遷移/フォーム送信するためのメソッドを追加(遷移先はpost_edit.html)
+- `views.py`にフォーム画面を描画/フォームの内容を保存するためのメソッド(`post_edit`)を作成
+- `urls.py`に作成したviewのメソッドのURLパターンを追加
+- `post_detail.html`に作成したviewのメソッドを呼び出すリンクを追加(編集フォーム画面に遷移する)
 
 認証の追加
 フォームページに遷移するのに{% user.is_authenticated %}でログインしているユーザーのみ新規作成できるように修正。シークレットモードで＋マークが消えていることを確認。
+
+## [ウェブサイトにもっと機能を追加しよう](https://tutorial-extensions.djangogirls.org/ja/homework/)
+draft一覧ページ作成
+- `post_draft.html`テンプレートを作成
+- `views.py`にdraft用のページを描画するためのメソッドを新規作成
+- `urls.py`に新規作成したviewのメソッドのURLパターンを追加
+- `base.html`に新規作成したviewのメソッドを呼び出すリンクを追加(ドラフト画面に遷移する)
+
+publish機能追加
+- `views.py`にpublish用のメソッドを新規作成
+- `urls.py`に新規作成したviewのメソッドのURLパターンを追加
+- `post_detail.html`にviewメソッドを呼び出すボタンを追加
+
+delete機能追加
+- `views.py`にdelete用のメソッドを新規作成
+- `urls.py`に新規作成したviewのメソッドのURLパターンを追加
+- `post_detail.html`にviewメソッドを呼び出すボタンを追加
