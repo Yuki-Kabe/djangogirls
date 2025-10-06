@@ -157,3 +157,30 @@ CSSでページの装飾。bootstrapも利用<br>
  2. `views.py`でURLパターンで呼び出されるメソッドを定義
  3. 遷移先のテンプレートを作成
  4. 遷移元のテンプレートのhref属性に定義したURLを指定。渡す値の設定なども
+
+PythonAnywhere<br>
+コンソールからリポジトリをpullして、CSSの更新を行う。
+```
+cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
+python3 manage.py collectstatic
+```
+Reloadしてコードが反映されたことを確認する
+
+## [Djangoフォーム](https://tutorial.djangogirls.org/ja/django_forms/)
+フォームを作成する。<br>
+DjangoフォームはFormクラスが保存対象とするModelクラスの必須項目などの情報を読み取ってPOST時に値が正しいのか自動で検証してくれる。(基本的なバリデーションは書く必要なし)
+
+新規作成<br>
+アプリケーションの`forms.pyファイル`を新規作成<br>
+- base.htmlにフォーム画面に遷移するためのリンクを作成
+- urls.pyにフォーム画面に遷移/フォーム送信を実行するためのURLパターンを追加
+- views.pyにフォーム画面に遷移/フォーム送信するためのメソッドを追加
+- post_edit.htmlを新規作成
+
+既存の更新<br>
+- post_detail.htmlにフォーム画面に遷移するためのリンクを作成
+- urls.pyにフォーム画面に遷移/フォーム送信を実行するためのURLパターンを追加
+- views.pyにフォーム画面に遷移/フォーム送信するためのメソッドを追加(遷移先はpost_edit.html)
+
+認証の追加
+フォームページに遷移するのに{% user.is_authenticated %}でログインしているユーザーのみ新規作成できるように修正。シークレットモードで＋マークが消えていることを確認。
