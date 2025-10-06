@@ -147,3 +147,13 @@ Viewからもらったデータを用いて動的にページが表示できる�
 ## [CSSでカワイくしよう](https://tutorial.djangogirls.org/ja/css/)
 CSSでページの装飾。bootstrapも利用<br>
 アプリケーション/static/ディレクトリを作成してテンプレートファイルで`{% load static %}`を記述するとDjangoが自動的にディレクトリを検索して読み込んでくれる。具体的にどのファイルを読み込むかはさらにhead要素で指定する。
+
+ ## [テンプレートを拡張しよう](https://tutorial.djangogirls.org/ja/template_extending/)
+ post_list.htmlに全ての記述を行なってたが、全ページで共通になりそうな部分をbase.htmlに切り出して、post_list.htmlはそれを読み込む形にした。
+
+ ## [アプリケーションを拡張しよう](https://tutorial.djangogirls.org/ja/extend_your_application/)
+ テンプレートの遷移先リンクを設定する。<br>
+ 1. アプリケーション側の`urls.py`で新しいURLパターンを定義
+ 2. `views.py`でURLパターンで呼び出されるメソッドを定義
+ 3. 遷移先のテンプレートを作成
+ 4. 遷移元のテンプレートのhref属性に定義したURLを指定。渡す値の設定なども
