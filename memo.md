@@ -143,3 +143,7 @@ DjangoではViewがController的な役割をする。
 
 ## [Djangoテンプレート](https://tutorial.djangogirls.org/ja/django_templates/)
 Viewからもらったデータを用いて動的にページが表示できるようにした。
+
+## [CSSでカワイくしよう](https://tutorial.djangogirls.org/ja/css/)
+CSSでページの装飾。bootstrapも利用<br>
+アプリケーション/static/ディレクトリを作成してテンプレートファイルで`{% load static %}`を記述するとDjangoが自動的にディレクトリを検索して読み込んでくれる。具体的にどのファイルを読み込むかはさらにhead要素で指定する。
