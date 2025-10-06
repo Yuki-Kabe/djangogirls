@@ -35,3 +35,8 @@ Djangoの機能を利用する場合は{% %}のような形で書く。
 - container : Bootstrapのクラス
 - row : Bootstrapの行コンテナ。その直下にカラム(`col-..`)を置く決まり
 - col-md-8 : Bootstrapのグリッドの幅指定。中程度の画面（md ≥ 992px）で 12分割中8列分の幅を使う、という意味。残り4列は空き（右に余白ができる
+
+## 実装のメモ
+- `post_new`はformの設定メソッドであるが、ここでの呼び出しはrequest.method="GET"になるのでelseの方の処理が走る
+- glyphicon glyphicon-plus : Boostrapに含まれているアイコンフォント。+マーク。spanタグで囲む必要あり。
+- {% if user.is_authenticated %} : ユーザーがログインしている場合にのみ有効になるようにセキュリティ。シークレットブラウザで同じページを開いた場合は＋のリンクが表示されないはず
