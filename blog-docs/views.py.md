@@ -21,6 +21,9 @@ render(request, template_name, context=None, content_type=None, status=None, usi
 render(URL名, 引数があれば指定。なければ第1引数のURL名だけで良い)
 ```
 
+## @login_requiredデコレータについて
+これがついているメソッドをログインなしで実行しようとするとログイン画面に遷移するようになる
+
 ## post_new()について
 `base.html`から呼ばれるときは`request.method="GET"`なのでelseを表示する。<br>
 フォームに値を入力して送信ボタンを押した際は`request.method="POST"`なのでFormクラスに設定されているModelをsave()してそのデータの詳細画面にリダイレクトする。

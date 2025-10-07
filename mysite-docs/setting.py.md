@@ -7,3 +7,4 @@
 - ALLOWED_HOSTS : 利用可能なホストネーム
 - DATABASES : 利用するデータベースの設定
 - INSTALLED_APPS : 作成したアプリケーション一覧。startappで作成したアプリはこちらに登録する
+- LOGIN_REDIRECT_URL : ログイン後にリダイレクトするURLパス。

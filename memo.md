@@ -202,3 +202,14 @@ delete機能追加
 - `views.py`にdelete用のメソッドを新規作成
 - `urls.py`に新規作成したviewのメソッドのURLパターンを追加
 - `post_detail.html`にviewメソッドを呼び出すボタンを追加
+
+## [ウェブサイトをセキュアにする](https://tutorial-extensions.djangogirls.org/ja/authentication_authorization/)
+デコレータを用いて書くメソッドの実行をログイン必須にする。<br>
+Djangoにはログインのための承認ツールが既に用意されている`django.contrib.auth`
+
+- プロジェクトの`urls.py`にloginのURLパターンを設定
+- `views.py`の各メソッドに`@login_required`を記述
+- アプリケーションのtemplates配下に`registration/login.html`を新規作成
+- プロジェクトの`settings.py`にLOGIN_REDIRECT_URLの設定の記述を追加
+
+- Django5.1以降はログアウト時にもPOSTメソッドを利用しないといけないらしく、サイトの通りに書くとログアウトメソッドを呼び出して405エラーになる。
