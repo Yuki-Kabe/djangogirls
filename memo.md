@@ -213,3 +213,32 @@ Djangoにはログインのための承認ツールが既に用意されてい�
 - プロジェクトの`settings.py`にLOGIN_REDIRECT_URLの設定の記述を追加
 
 - Django5.1以降はログアウト時にもPOSTメソッドを利用しないといけないらしく、サイトの通りに書くとログアウトメソッドを呼び出して405エラーになる。
+
+## [コメントモデルを作ろう](https://tutorial-extensions.djangogirls.org/ja/homework_create_more_models/)
+データモデルを拡張する。<br>
+
+`Comment`クラスの定義
+- アプリケーションの`models.py`に新しい`Comment`classを追加する
+マイグレーション実行
+```
+python3 manage.py makemigrations <アプリ名>
+python3 manage.py migrate <アプリ名>
+```
+- アプリケーションの`admin.py`に新しく作成した`Comment`classを追加する
+- `post_detail.html`にpostに紐づくcommentを全て表示するように記述を追加
+- `post_list.html`にpostに紐づくコメント数を表示するように修正
+
+`Comment`クラスのフォーム追加
+- `forms.py`に`CommentForm`クラスを実装
+- `add_comment_to_post.html`テンプレートを新規作成(フォーム用の画面)
+- `views.py`にフォーム画面を描画/フォームの内容を保存するためのメソッド(`add_comment_to_post`)を作成
+- `urls.py`に作成したメソッドを追加
+- `post_detail.html`に追加したviewメソッドを呼び出すボタンを追加
+
+`Comment`のapprove,remove
+- `post_detail.html`に非ログイン者にはapproveされたコメントのみが見えるようにif分岐を追加
+- `views.py`にapprove用メソッド、remove用メソッドを追加
+- `urls.py`に追加したメソッドのURL名を定義
+- `post_detail.html`にログイン者のみが利用可能なapproveされていないcommentのremove,approveメソッドに関するボタンを追加
+- `models.py`の`Post`クラスに紐づいているapprove済みのリレーションの一覧を取得するようなメソッドを定義
+- `post_list.html`の部分を定義したメソッドを利用してcountするように修正

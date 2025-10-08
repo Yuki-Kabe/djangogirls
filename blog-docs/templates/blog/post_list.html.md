@@ -23,4 +23,5 @@ viewからは辞書形式でデータを渡されるのでそのキーでアク�
 ```
 
 ## 実装のメモ
-`|linebreaksbr` : テキスト中の改行を段落に変換するフィルタに通す
+- `|linebreaksbr` : テキスト中の改行を段落に変換するフィルタに通す
+- {{ post.approved_comments.count }} : Postクラスに`approved_comments()`が定義されている。戻り値のcommentオブジェクトの数をcountしている
