@@ -16,3 +16,6 @@ python3 manage.py migrate
 
 ビジネスロジックはclassの独自メソッドで定義する。
 __str__()メソッドはクラスを呼び出した際に何かをするものだった気がする
+
+## 実装のメモ
+- approved_comments : Postクラスにcommentsの記載はないが、Commentクラスの方を見てみると`related_name`のところで`comments`という指定がある。　外部キー制約かけられた側はrelated_nameを指定することで紐づくオブジェクトを取得できるっぽい。
