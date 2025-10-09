@@ -242,3 +242,18 @@ python3 manage.py migrate <アプリ名>
 - `post_detail.html`にログイン者のみが利用可能なapproveされていないcommentのremove,approveメソッドに関するボタンを追加
 - `models.py`の`Post`クラスに紐づいているapprove済みのリレーションの一覧を取得するようなメソッドを定義
 - `post_list.html`の部分を定義したメソッドを利用してcountするように修正
+
+## [テストコードを書く](https://zenn.dev/hideoamezawa/books/study_testcode/viewer/3_django_girls_test)
+- アプリケーション配下の`fixtures/tests/users.yaml`ファイルにtest用のユーザーデータを記述
+以下のコマンドで現在のDBをダンプしてそれを参考に編集した。
+  ```
+  mkdir blog/fixtures/tests
+  python3 manage.py dumpdata auth.user --format=yaml --indent 2 > blog/fixtures/tests/users.yaml
+  ```
+- アプリケーション配下の`tests.py`を削除(これがあると上手く動かなかった。)
+- アプリケーション配下に`tests`ディレクトリを作成し、`tests/__init__.py`を作成(これでPythonがライブラリと判断できるようになる)
+- それぞれのテストコードを作成
+以下でテスト実行
+```
+python3 manage.py test <アプリ名>
+```
